@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.suduko-box{
+    box-sizing: border-box;
+    border: 0.2vh solid black;
+    background-color: rgb(232,232,123);
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (orientation:landscape) {
+    .suduko-box{
+        margin: auto;
+        height: 100vh;
+        width:100vh;
+    }
+    .vertibox{
+        border: 0.1vh   black;
+    }
+    .horibox{
+        border: 0.1vh solid black;
+    }
+    .horibox2{
+        border: 0.1vh solid black;
+    }
+    
+}
+@media screen and (orientation:portrait) {
+    .suduko-box{
+        position: absolute;
+        top: calc(50vh - 50vw);
+        width: 100vw;
+        height: 100vw;  
+    }
+    .vertibox{
+        border: 0.1vw   black;
+    }
+    .horibox{
+        border: 0.1vw solid black;
+    }
+    .horibox2{
+        border: 0.1vw solid black;
+    }
+        
+    
+}
+.vertibox{
+    box-sizing:border-box ;
+    height: calc(100% / 3);
+    display: flex;
+    gap: 0;
+}
+.horibox{
+    box-sizing:border-box ;
+    display: flex;
+    width:  calc(100% / 3);
+    height: 100%;
+    flex-direction: column;
+    gap: 0;
+}
+.horibox2{
+    width:  calc(100% / 3);
+    height: 100%;
+    display: flex;
+    word-wrap: break-word;
+    justify-content: center;
+    align-items: center;
+}
