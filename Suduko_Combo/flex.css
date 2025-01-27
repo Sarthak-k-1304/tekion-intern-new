@@ -24,6 +24,7 @@ body {
   }
   .cell {
     border: 0.1vh solid black;
+    font-size: 6vh;
   }
 }
 @media screen and (orientation: portrait) {
@@ -41,6 +42,7 @@ body {
   }
   .cell {
     border: 0.1vw solid black;
+    font-size: 6vw;
   }
 }
 .col {
