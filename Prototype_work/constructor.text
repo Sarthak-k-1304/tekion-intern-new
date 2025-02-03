@@ -1,0 +1,10 @@
+we need to change the constructor as lets take example
+
+Dog class is inherited from animal class
+
+now when we use Dog.prototype=Object.create(Animal.prototype) 
+the constructor of Dog.prototype now points to animal rather than Dog 
+
+thus to change it we have to use 
+
+Dog.prototype.constructor=Dog;
