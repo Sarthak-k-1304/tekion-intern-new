@@ -1,0 +1,73 @@
+const Player = function (name) {
+  this.name = name;
+};
+
+export const Sudoku = function (name) {
+  Player.call(this, name);
+
+  this.prefilledcell = 25;
+  let correctcells = this.prefilledcell;
+
+  let matrix = new Array(9).fill(0).map(() => new Array(9).fill(0));
+  let visiblematrix = new Array(9).fill(0).map(() => new Array(9).fill(0));
+
+  this.setMatrix = (newMatrix) => {
+    matrix = newMatrix;
+  };
+  this.setVisiblematrix = (newMatrix) => {
+    visiblematrix = newMatrix;
+  };
+
+  this.getMatrix = () => {
+    return matrix;
+  };
+  this.getVisiblematrix = () => {
+    return visiblematrix;
+  };
+
+  this.startTime = Date.now();
+  this.endTime = null;
+
+  this.getCorrectcells = () => {
+    return correctcells;
+  };
+
+  this.incrementcorrectcell = (num = 1) => {
+    correctcells += num;
+  };
+  this.decrementcorrectcell = () => {
+    correctcells--;
+  };
+};
+
+Sudoku.prototype.renderBoard = function (visiblematrix) {
+  let cells = document.querySelectorAll(".cell");
+  cells.forEach((cell) => {
+    let rowindx = parseInt(cell.getAttribute("data-row"));
+
+    let colindx = parseInt(cell.getAttribute("data-col"));
+
+    if (visiblematrix[rowindx][colindx] != 0) {
+      cell.value = visiblematrix[rowindx][colindx];
+      cell.setAttribute("disabled", true); // Disable input field
+    } else {
+      cell.value = "";
+      cell.removeAttribute("disabled");
+    }
+  });
+};
+
+Sudoku.prototype.validation = function (element) {
+  let row = parseInt(element.getAttribute("data-row"));
+  let col = parseInt(element.getAttribute("data-col"));
+  if (element.value == "") {
+    this.prefilledcell--;
+    let previous = this.getVisiblematrix()[row][col];
+    if (previous == this.getMatrix()[row][col]) this.decrementcorrectcell();
+  } else {
+    this.prefilledcell++;
+    this.getVisiblematrix()[row][col] = element.value;
+    if (this.getVisiblematrix()[row][col] == this.getMatrix()[row][col])
+      this.incrementcorrectcell();
+  }
+};
