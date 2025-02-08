@@ -21,7 +21,6 @@ body {
   }
   .cell {
     border: 0.1vh solid black;
-    font-size: 6vh;
   }
 }
 
@@ -40,7 +39,6 @@ body {
   }
   .cell {
     border: 0.1vw solid black;
-    font-size: 6vw;
   }
 }
 .col {
@@ -50,15 +48,15 @@ body {
 
 .row {
   box-sizing: border-box;
+  display: block;
   float: left;
   width: calc(100% / 3);
   height: 100%;
 }
 .cell {
   box-sizing: border-box;
+  display: block;
   float: left;
   width: calc(100% / 3);
   height: 100%;
-  text-align: center;
-  line-height: 200%;
 }

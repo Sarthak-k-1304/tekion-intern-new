@@ -8,7 +8,7 @@ body {
   border: 0.2vh solid black;
   background-color: rgb(232, 232, 123);
   display: grid;
-  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
 }
 @media screen and (orientation: landscape) {
@@ -25,7 +25,6 @@ body {
   }
   .cell {
     border: 0.1vh solid black;
-    font-size: 6vh;
   }
 }
 
@@ -44,20 +43,19 @@ body {
   }
   .cell {
     border: 0.1vw solid black;
-    font-size: 6vw;
   }
 }
 
 .col {
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  grid-template-rows: repeat(3, 1fr);
   gap: 0;
 }
 .row {
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
 }
 
@@ -66,5 +64,4 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
