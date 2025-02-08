@@ -5,9 +5,13 @@ const Player = function (name) {
 export const Sudoku = function (name) {
   Player.call(this, name);
 
+  this.id = this.generateUUID();
   this.prefilledcell = 25;
-  let correctcells = this.prefilledcell;
+  this.startTime = Date.now();
+  this.endTime = null;
 
+  // Private Variables
+  let correctcells = this.prefilledcell;
   let matrix = new Array(9).fill(0).map(() => new Array(9).fill(0));
   let visiblematrix = new Array(9).fill(0).map(() => new Array(9).fill(0));
 
@@ -24,10 +28,6 @@ export const Sudoku = function (name) {
   this.getVisiblematrix = () => {
     return visiblematrix;
   };
-
-  this.startTime = Date.now();
-  this.endTime = null;
-
   this.getCorrectcells = () => {
     return correctcells;
   };
@@ -38,6 +38,22 @@ export const Sudoku = function (name) {
   this.decrementcorrectcell = () => {
     correctcells--;
   };
+};
+Sudoku.prototype.generateUUID = function () {
+  let uuid = "";
+  for (let i = 0; i < 36; i++) {
+    let digit = Math.floor(Math.random() * 16);
+    if (i === 14) {
+      uuid += "4";
+    } else if (i === 19) {
+      uuid += ((digit & 3) | 8).toString(16);
+    } else if (i === 8 || i === 13 || i === 18 || i === 23) {
+      uuid += "-";
+    } else {
+      uuid += digit.toString(16);
+    }
+  }
+  return uuid;
 };
 
 Sudoku.prototype.renderBoard = function (visiblematrix) {
