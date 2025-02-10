@@ -66,6 +66,8 @@ Sudoku.prototype.renderBoard = function (visiblematrix) {
     if (visiblematrix[rowindx][colindx] != 0) {
       cell.value = visiblematrix[rowindx][colindx];
       cell.setAttribute("disabled", true); // Disable input field
+      cell.style.backgroundColor = "#5C4033"; // Set background color
+      cell.style.color = "white"; // Ensure text is visible
     } else {
       cell.value = "";
       cell.removeAttribute("disabled");
