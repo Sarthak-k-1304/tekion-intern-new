@@ -69,6 +69,11 @@ Sudoku.prototype.renderBoard = function (visiblematrix) {
       cell.style.backgroundColor = "#5C4033"; // Set background color
       cell.style.color = "white"; // Ensure text is visible
     } else {
+      if (cell.style.backgroundColor === "rgb(92, 64, 51)") {
+        // Equivalent of #5C4033
+        cell.style.backgroundColor = "";
+        cell.style.color = "";
+      }
       cell.value = "";
       cell.removeAttribute("disabled");
     }
