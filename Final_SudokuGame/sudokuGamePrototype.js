@@ -70,7 +70,6 @@ Sudoku.prototype.renderBoard = function (visiblematrix) {
       cell.style.color = "white"; // Ensure text is visible
     } else {
       if (cell.style.backgroundColor === "rgb(92, 64, 51)") {
-        // Equivalent of #5C4033
         cell.style.backgroundColor = "";
         cell.style.color = "";
       }

@@ -1,6 +1,6 @@
-import { generateAnsMatrix } from "./ans-matrix.js";
-import { Sudoku } from "./sudoku-game-prototype.js";
-import { generateVisibleMatrix } from "./visible-matrix.js";
+import { generateAnsMatrix } from "./ansMatrix.js";
+import { Sudoku } from "./sudokuGamePrototype.js";
+import { generateVisibleMatrix } from "./visibleMatrix.js";
 
 export const createGame = function () {
   const name = prompt("Please Enter your name");
