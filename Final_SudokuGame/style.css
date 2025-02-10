@@ -44,6 +44,9 @@ body {
   .button {
     width: 100%;
   }
+  .content {
+    gap: 5vh;
+  }
 }
 @media screen and (orientation: portrait) {
   .sudoku-box {
@@ -81,6 +84,7 @@ body {
 .content {
   height: 70vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -103,6 +107,7 @@ body {
 }
 
 .main {
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -121,6 +126,7 @@ body {
 }
 
 .heading {
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;

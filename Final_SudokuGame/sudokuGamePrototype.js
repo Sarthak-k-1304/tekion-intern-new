@@ -3,7 +3,7 @@ const Player = function (name) {
 };
 
 export const Sudoku = function (name) {
-  Player.call(this, name);
+  Player.call(this, name); // parent constructor
 
   this.id = this.generateUUID();
   this.prefilledcell = 25;
@@ -39,6 +39,7 @@ export const Sudoku = function (name) {
     correctcells--;
   };
 };
+// uuid generation
 Sudoku.prototype.generateUUID = function () {
   let uuid = "";
   for (let i = 0; i < 36; i++) {
@@ -55,7 +56,7 @@ Sudoku.prototype.generateUUID = function () {
   }
   return uuid;
 };
-
+// rendering the board
 Sudoku.prototype.renderBoard = function (visiblematrix) {
   let cells = document.querySelectorAll(".cell");
   cells.forEach((cell) => {
@@ -78,7 +79,7 @@ Sudoku.prototype.renderBoard = function (visiblematrix) {
     }
   });
 };
-
+// validation at each typing in cell
 Sudoku.prototype.validation = function (element) {
   let row = parseInt(element.getAttribute("data-row"));
   let col = parseInt(element.getAttribute("data-col"));

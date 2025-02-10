@@ -20,9 +20,13 @@ export const setupUihandler = function (currentGame) {
     game.endTime = Date.now();
     console.log(correct);
     console.log("hi", game.prefilledcell);
-    if (game.prefilledcell !== 81) alert("please complete the grid");
-    else if (correct !== 81) alert("you lost");
-    else alert("Wohoo you won");
+    if (game.prefilledcell !== 81) {
+      alert("please complete the grid");
+    } else if (correct === 81) {
+      alert("Wooho You Won");
+    } else {
+      alert("you lost");
+    }
   });
 
   const test = document.getElementById("test");
