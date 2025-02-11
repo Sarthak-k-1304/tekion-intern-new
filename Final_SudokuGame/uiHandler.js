@@ -1,6 +1,9 @@
 export const setupUihandler = function (currentGame) {
-  const newGame = document.getElementById("new-game");
   const cells = document.querySelectorAll(".cell");
+  const newGame = document.getElementById("new-game");
+
+  // New Game Button
+
   newGame.addEventListener("click", () => {
     currentGame.startNewGame();
     let game = currentGame.getGame();
@@ -13,6 +16,7 @@ export const setupUihandler = function (currentGame) {
     });
   });
 
+  // Validate Result Button to display the result
   const validateResult = document.getElementById("check-result");
   validateResult.addEventListener("click", () => {
     let game = currentGame.getGame();
@@ -29,6 +33,7 @@ export const setupUihandler = function (currentGame) {
     }
   });
 
+  // This button is only for developer to immediately fill the grid
   const test = document.getElementById("test");
   test.addEventListener("click", () => {
     let temp = 0;

@@ -1,5 +1,6 @@
 const section = document.querySelector(".main");
 
+// create the basic sudoku dom grid
 export const createGrid = function () {
   const limit = 3;
   const sudoku = document.createElement("div");
@@ -40,7 +41,7 @@ export const createGrid = function () {
   }
   section.appendChild(sudoku);
 };
-
+// create the butttons
 export const createButtons = function () {
   const buttonsdiv = document.createElement("div");
   buttonsdiv.classList.add("button-div");
@@ -62,19 +63,4 @@ export const createButtons = function () {
   generateNewGame.textContent = "NewGame";
   checkresult.textContent = "Validate";
   buttonsdiv.append(test_onlydev, checkresult, generateNewGame);
-};
-
-export const displayMsg = function (message) {
-  const content = document.querySelector(".content");
-  let msg = document.querySelector("h2");
-  if (!msg) {
-    const msg = document.createElement("h2");
-    msg.textContent = message;
-    content.appendChild(msg);
-  } else msg.textContent = message;
-};
-
-export const removeMsg = function () {
-  const element = document.querySelector(".content h2");
-  if (element) element.remove();
 };

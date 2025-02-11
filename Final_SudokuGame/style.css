@@ -73,7 +73,7 @@ body {
   .button-div {
     width: 100%;
     justify-content: space-between;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 1vh;
   }
   .button {
