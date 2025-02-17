@@ -24,5 +24,6 @@ export const createGame = function () {
   return {
     startNewGame,
     getGame: () => game,
+    getName: () => name,
   };
 };

@@ -17,7 +17,7 @@ body {
   background-color: rgb(232, 232, 123);
 }
 @media screen and (orientation: landscape) {
-  .main {
+  .grid-buttons {
     height: 50vh;
   }
   .sudoku-box {
@@ -50,7 +50,6 @@ body {
 }
 @media screen and (orientation: portrait) {
   .sudoku-box {
-    /* position: absolute; */
     top: calc(50vh - 50vw);
     width: 40vw;
     height: 40vw;
@@ -65,7 +64,7 @@ body {
     border: 0.1vw solid black;
     font-size: 4vw;
   }
-  .main {
+  .grid-buttons {
     flex-direction: column;
     width: 42vw;
     height: 100%;
@@ -73,7 +72,7 @@ body {
   .button-div {
     width: 100%;
     justify-content: space-between;
-    /* flex-direction: column; */
+    flex-direction: column;
     gap: 1vh;
   }
   .button {
@@ -106,7 +105,7 @@ body {
   padding: 0;
 }
 
-.main {
+.grid-buttons {
   height: 80vh;
   display: flex;
   justify-content: center;
@@ -126,6 +125,13 @@ body {
 }
 
 .heading {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
   height: 10vh;
   display: flex;
   justify-content: center;

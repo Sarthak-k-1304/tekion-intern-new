@@ -1,4 +1,4 @@
-const section = document.querySelector(".main");
+const gameUi = document.querySelector(".grid-buttons");
 
 // create the basic sudoku dom grid
 export const createGrid = function () {
@@ -39,13 +39,13 @@ export const createGrid = function () {
       }
     }
   }
-  section.appendChild(sudoku);
+  gameUi.appendChild(sudoku);
 };
 // create the butttons
 export const createButtons = function () {
   const buttonsdiv = document.createElement("div");
   buttonsdiv.classList.add("button-div");
-  section.appendChild(buttonsdiv);
+  gameUi.appendChild(buttonsdiv);
 
   const generateNewGame = document.createElement("button");
   const checkresult = document.createElement("button");

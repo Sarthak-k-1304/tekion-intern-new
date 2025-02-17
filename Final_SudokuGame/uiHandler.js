@@ -50,4 +50,9 @@ export const setupUihandler = function (currentGame) {
     game.incrementcorrectcell(temp);
     game.prefilledcell = 81;
   });
+
+  const namediv = document.querySelector(".name");
+  const NameEntered = document.createElement("h1");
+  NameEntered.textContent = currentGame.getName();
+  namediv.append(NameEntered);
 };
