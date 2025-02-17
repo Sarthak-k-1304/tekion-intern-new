@@ -5,11 +5,13 @@ This is 9\*9 sudoku game grid which generates currently 25 number prefilled to p
 # Architecture & Game Logic :
 
 -The Game first ask the name of the Player which is then displayed in the footer.
+
 -An answer matrix is created with backtracking and bitmasking and then a visible matrix is created by taking 25 numbers out of it randomly such that it is equally distributed in each big cell
 
 -(Also the logic is written in such a way that it can be extensible for any number of prefilled cell)
 
--The visible matrix is connected with the actual grid on the webpage in uiHandler.js
+-The visible matrix is connected with the actual grid on the webpage in uiHandler.js.
+
 -The suduko game logic is written with the help of constructor function and prototype and i tried to segregate the game logic and ui logic
 
 # Validation:
