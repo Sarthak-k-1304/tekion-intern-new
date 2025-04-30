@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.suduko-box {
+  box-sizing: border-box;
+  border: 0.2vh solid black;
+  background-color: rgb(232, 232, 123);
+  display: grid;
+  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  gap: 0;
+}
+@media screen and (orientation: landscape) {
+  .suduko-box {
+    margin: auto;
+    height: 100vh;
+    width: 100vh;
+  }
+  .col {
+    border: 0.1vh black;
+  }
+  .row {
+    border: 0.1vh solid black;
+  }
+  .cell {
+    border: 0.1vh solid black;
+    font-size: 6vh;
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .suduko-box {
+    position: absolute;
+    top: calc(50vh - 50vw);
+    width: 100vw;
+    height: 100vw;
+  }
+  .col {
+    border: 0.1vw black;
+  }
+  .row {
+    border: 0.1vw solid black;
+  }
+  .cell {
+    border: 0.1vw solid black;
+    font-size: 6vw;
+  }
+}
+
+.col {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  gap: 0;
+}
+.row {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: calc(100% / 3) calc(100% / 3) calc(100% / 3);
+  gap: 0;
+}
+
+.cell {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
